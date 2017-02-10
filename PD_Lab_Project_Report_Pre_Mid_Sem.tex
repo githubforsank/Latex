@@ -1,0 +1,153 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Example: Project Report
+%
+% Source: http://www.howtotex.com
+%
+% Feel free to distribute this example, but please keep the referral
+% to howtotex.com
+% Date: March 2011 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Edit the title below to update the display in My Documents
+%\title{Project Report}
+%
+%%% Preamble
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+
+\usepackage[english]{babel}															% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[pdftex]{graphicx}	
+\usepackage{url}
+
+
+%%% Custom sectioning
+\usepackage{sectsty}
+\allsectionsfont{\centering \normalfont\scshape}
+
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}											% No page header
+\fancyfoot[L]{}											% Empty 
+\fancyfoot[C]{}											% Empty
+\fancyfoot[R]{\thepage}									% Pagenumbering
+\renewcommand{\headrulewidth}{0pt}			% Remove header underlines
+\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
+\setlength{\headheight}{13.6pt}
+
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}		% Equationnumbering: section.eq#
+\numberwithin{figure}{section}			% Figurenumbering: section.fig#
+\numberwithin{table}{section}				% Tablenumbering: section.tab#
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\title{
+		%\vspace{-1in} 	
+		\usefont{OT1}{bch}{b}{n}
+		\normalfont \normalsize \textsc{National Institute Of Technology Rourkela} \\ [25pt]
+		\horrule{0.5pt} \\[0.4cm]
+		\huge Biometric recognition and matching using remote system\\
+		\horrule{2pt} \\[0.5cm]
+}
+\author{
+		\normalfont 								
+        Sasank Sekhar Panda - 114CS0632\\[-3pt] 
+        Abhijeet Behera	- 714CS1036\\[-3pt]	
+        Guide : Prof. Anup Nandy, Dept. of CSE\\
+        \\
+        \today
+}
+
+\date{}
+
+
+%%% Begin document
+\begin{document}
+\maketitle
+\section{Project Description}
+Biometrics can be considered among the most secured data for personal identification with a accuracy of 99.99\%. It includes indentification of personal traits like retina and fingerprint which is unique to each individual by nature. Exploring the uniqueness, the data can be obtained electronically and can be used for exclusive foolproof identification. The project focuses on collecting fingerprint samples and sending it to a remote system over the network for matching algorithms to run and henceforth detect desired traits and matches. It includes a well sync combination of hardware and software for the desired results to be obtained.
+
+
+
+\subsection{Hardware Used}
+The following hardwares are used to implement the prototype
+\begin{itemize}
+	\item1- Remote System
+    \item2- R305 Fingerprint Module with Serial TTL 
+    \item3- Arduino Mega 2650 Microcontroller with Atmel 32
+    \item4- Ethernet Shield with TCP/IP Protocol for Mega
+    \item5- LCD Display for User Interaction
+    
+\end{itemize}
+\subsection{Software Used}
+The following softwares have been used to design the said prototype
+\begin{itemize}
+	\item1- Arduino IDE to code the microcontroller.
+    \item2- Vim Editor to write Server Side Code.
+    
+\end{itemize}
+
+
+
+\section{Abstract Working Description}
+\begin{paragraph}
+A dataset is created in the server at the time of registering finger samples to the system. The client currently works in enrollment mdoe. The dataset is stored in a desired database. A server service is then run which listens to the client connection on the specified port. Now when  the client module is set to identification mode then it recieves samples from users and sends it to the server over the network on the specified port. The server then processed the sample and search for a match and returns the response value to the client. The response is finally recorded by the client and then displayed to the user.
+\end{paragraph}
+\section{Key Implementation Features}
+\begin{paragraph}
+	A key feature of the implementation is the throughput time of the system. Generally a transaction with the remote system with the overhead of link speed and matching algorithm time would be laggy and sluggish in behaviour. Certain improvements in algorithms and sendind techniques which will be discussed later are implemented to enhance the throughput time of the system and thus increases the prototype's scalability and applicability.
+	
+\end{paragraph}
+
+\section{Applications}
+\begin{paragraph}
+	The prototype is a working model which can be commericially manufactured for implementation of attendance system monitored by a central database as in an institution like ours. More development on the server side code and database modularity will enable to implement it dept/section wise and thus would work as independent monitoring of students attendance.
+    
+    The project was initially developed for local client but later improved to remote system scalablity by the recommendation of :\\
+    Dr. Prof. B Majhi\\
+    Dr. Prof. Pankaj K Shah \\
+    for institutional application after successful hardware reliability and system effectiveness.
+	
+\end{paragraph}
+\section{Work Progress}
+\begin{paragraph}
+	The hardwares have been procured and all the needed dependencies have been fulfilled. The embedded system library has been reviewed and scalablity testing is on phase. The challenge is to increase response time in a networked system.
+	
+\end{paragraph}
+\section{Post MidSem Implementation}
+\begin{paragraph}
+	The system would be completely taken to a scalable model and all the testing would be done and finally would be ready for real world applications. Before that all load tests and system endurance test would be performed and development would be made as per requirement.
+\end{paragraph}
+
+\begin{paragraph}
+	All work progress are well documented in a presentable format and will be attached with the final project report to be submitted. The codes used as well as the logical and physical connections would be well demonstrated in the final report. Work is in full phase and we hope to achieve the targeted goal in the stipulated time.\\\\\\
+    
+    Thank you.
+\end{paragraph}
+
+
+%%% End document
+\end{document}
